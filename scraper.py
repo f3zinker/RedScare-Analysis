@@ -25,10 +25,10 @@ while start_epoch < end_epoch + 86200:
     try:
         print(f"Beggining to process data for {dateStr}")
         df_comments = pd.DataFrame([comment.d_ for comment in api_request_generator])
-        df_comments['date'] = pd.to_datetime(missy_comments['created_utc'], utc=True, unit='s')
+        df_comments['date'] = pd.to_datetime(missy_comments['created_utc'], utc = True, unit = 's')
         df_central = df_comments[['date','score','body']]
         print(f"Data processed for {date_str}")
-        missy_central.to_csv(fr"data\\{date_str}.csv", index = False, header = True)
+        df_central.to_csv(fr"data\\{date_str}.csv", index = False, header = True)
     except KeyError:
         print(f"Got key error skipping {date_str}")
         pass
@@ -40,5 +40,5 @@ os.chdir(r"data\\")
 
 all_filenames = [file for file in glob.glob('*.csv')]
 combined_csv = pd.concat([pd.read_csv(f) for f in all_filenames ]) 
-combined_csv.to_csv( "combined.csv", index=False, encoding='utf-8-sig') 
+combined_csv.to_csv( "combined.csv", index = False, encoding = 'utf-8-sig') 
 print("Dataset ready to use")
