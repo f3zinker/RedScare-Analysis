@@ -24,10 +24,10 @@ while start_epoch < end_epoch + 86200:
     api_request_generator = api.search_comments(subreddit='redscarepod',
                                                 after = start_epoch,
                                                 before = start_epoch + 860000//2) 
-    print(f"Making API call for {dateStr}")
+    print(f"Making API call for {date_str}")
     
     try:
-        print(f"Beggining to process data for {dateStr}")
+        print(f"Beggining to process data for {date_str}")
         df_comments = pd.DataFrame([comment.d_ for comment in api_request_generator])
         df_comments['date'] = pd.to_datetime(missy_comments['created_utc'], utc = True, unit = 's')
         df_central = df_comments[['date','score','body']]
