@@ -4,7 +4,7 @@ import pandas as pd
 from psaw import PushshiftAPI
 from datetime import datetime as dt
 
-
+# make data dir
 os.mkdir("data")
 
 
