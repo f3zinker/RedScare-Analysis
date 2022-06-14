@@ -4,6 +4,10 @@ import pandas as pd
 from psaw import PushshiftAPI
 from datetime import datetime as dt
 
+
+os.mkdir("data")
+
+
 # Specify start and end dates
 start_epoch = int(dt(2021, 3, 22).timestamp()) 
 end_epoch = int(dt(2022, 6, 1).timestamp()) 
