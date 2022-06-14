@@ -1,0 +1,11 @@
+pandas
+numpy
+seaborn
+matplotlib
+wordcloud
+ray
+textstat
+psaw
+scipy
+tqdm
+language-tool-python
