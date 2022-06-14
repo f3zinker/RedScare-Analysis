@@ -1,6 +1,6 @@
 To run.
 
-1. Make sure you have Java installed as a dependency. 
+1. Make sure you have Java installed as a dependency. The install the dependencies in requirements.txt
 
 2. In the scraper.py script mess about with the start_date, end_date and the unix time stamp increments to change time range and sampling requency. 
 
