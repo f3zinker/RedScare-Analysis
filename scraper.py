@@ -29,7 +29,7 @@ while start_epoch < end_epoch + 86200:
     try:
         print(f"Beggining to process data for {date_str}")
         df_comments = pd.DataFrame([comment.d_ for comment in api_request_generator])
-        df_comments['date'] = pd.to_datetime(missy_comments['created_utc'], utc = True, unit = 's')
+        df_comments['date'] = pd.to_datetime(df_comments['created_utc'], utc = True, unit = 's')
         df_central = df_comments[['date','score','body']]
         print(f"Data processed for {date_str}")
         df_central.to_csv(fr"data\\{date_str}.csv", index = False, header = True)
